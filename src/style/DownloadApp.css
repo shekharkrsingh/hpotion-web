@@ -1,0 +1,210 @@
+/* Download App Section */
+#download-app {
+  background: var(--dark-light);
+  border-radius: 20px;
+  margin: 80px auto;
+  padding: 60px 0;
+}
+
+.download-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.download-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.download-text h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.download-text p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.app-features {
+  margin: 30px 0;
+}
+
+.app-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.app-feature i {
+  color: var(--secondary);
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.app-feature span {
+  color: var(--text);
+}
+
+.download-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: var(--transition);
+  min-width: 180px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.download-btn i {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.download-btn div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.download-btn span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.download-btn strong {
+  font-size: 1.2rem;
+}
+
+.ios-btn {
+  background: #000;
+  color: white;
+}
+
+.ios-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.android-btn {
+  background: #3DDC84;
+  color: #000;
+}
+
+.android-btn:hover {
+  background: #2cc973;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.phone-mockup {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin: 0 auto;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: 40px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 4rem;
+}
+
+.phone-screen .app-preview {
+  text-align: center;
+}
+
+/* Responsive Download App */
+@media (max-width: 992px) {
+  .download-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .download-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .app-feature {
+    justify-content: center;
+  }
+  
+  .phone-mockup {
+    width: 250px;
+    height: 500px;
+  }
+  
+  .phone-screen {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #download-app {
+    margin: 60px auto;
+    padding: 40px 0;
+  }
+  
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .download-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+  
+  .phone-mockup {
+    width: 200px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  #download-app {
+    margin: 40px auto;
+    padding: 30px 0;
+    border-radius: 10px;
+  }
+  
+  .download-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .phone-mockup {
+    width: 180px;
+    height: 360px;
+  }
+  
+  .phone-screen {
+    font-size: 2.5rem;
+  }
+}

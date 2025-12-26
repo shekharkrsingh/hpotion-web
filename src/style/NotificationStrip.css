@@ -1,0 +1,126 @@
+/* Notification Strip */
+.notification-strip {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.notification-strip.closing {
+  transform: translateY(-100%);
+}
+
+.strip-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.strip-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.strip-text i {
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.strip-text strong {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.strip-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+
+.strip-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.strip-close:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
+/* Animation for the icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Adjust navbar when notification is visible */
+.notification-strip + .navbar {
+  top: 44px; /* Height of notification strip + padding */
+}
+
+/* Responsive Notification Strip */
+@media (max-width: 768px) {
+  .notification-strip {
+    padding: 10px 0;
+  }
+  
+  .strip-text {
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  
+  .strip-text i {
+    font-size: 0.9rem;
+  }
+  
+  .notification-strip + .navbar {
+    top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .strip-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .strip-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .strip-close {
+    align-self: flex-end;
+    margin-top: -30px;
+    margin-right: 10px;
+  }
+  
+  .notification-strip + .navbar {
+    top: 70px; /* Increased for stacked layout */
+  }
+}

@@ -1,0 +1,69 @@
+/* Expectations Section */
+.expectations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.expectation-card {
+  background: var(--dark-light);
+  padding: 30px;
+  border-radius: 10px;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.expectation-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.expectation-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.expectation-card:hover .expectation-icon {
+  transform: scale(1.1);
+  color: var(--secondary);
+}
+
+.expectation-card h3 {
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.expectation-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Responsive Expectations */
+@media (max-width: 768px) {
+  .expectations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .expectation-card {
+    padding: 25px 20px;
+  }
+  
+  .expectation-icon {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .expectations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .expectation-card {
+    padding: 20px;
+  }
+}
