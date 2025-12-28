@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import NotificationStrip from './components/NotificationStrip';
 import Navbar from './components/Navbar';
@@ -9,14 +10,14 @@ import DownloadApp from './components/DownloadApp';
 import Expectations from './components/Expectations';
 import HowItWorks from './components/HowItWorks';
 import AppGallery from './components/AppGallery';
-// import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
-// import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import DoctorProfile from './components/DoctorProfile';
 import './App.css';
 
-function App() {
+// Home Page Component
+const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hasNotification, setHasNotification] = useState(true);
 
@@ -36,24 +37,39 @@ function App() {
   }, []);
 
   return (
+    <div className={`home-page ${hasNotification ? 'has-notification' : ''}`}>
+      <NotificationStrip />
+      <Navbar scrolled={scrolled} />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <DownloadApp />
+        <Expectations />
+        <HowItWorks />
+        <AppGallery />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+// Main App Component
+function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  return (
     <ThemeProvider>
-      <div className={`App ${hasNotification ? 'has-notification' : ''}`}>
-        <NotificationStrip />
-        <Navbar scrolled={scrolled} />
-        <main>
-          <Hero />
-          <About />
-          <Services />
-          <DownloadApp />
-          <Expectations />
-          <HowItWorks />
-          <AppGallery />
-          {/* <Pricing /> */}
-          <FAQ />
-          {/* <Testimonials /> */}
-          <Contact />
-        </main>
-        <Footer />
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/book/:doctorId" element={<DoctorProfile />} />
+          {/* Add more routes here as needed */}
+        </Routes>
       </div>
     </ThemeProvider>
   );

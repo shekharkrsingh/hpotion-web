@@ -1,0 +1,377 @@
+/* Doctor Profile Page */
+.doctor-profile {
+  padding: 100px 0 60px;
+  min-height: 100vh;
+  background: var(--dark);
+}
+
+
+.doctor-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 0;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(110, 68, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.doctor-loading p {
+  color: var(--text);
+}
+
+.doctor-error {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.doctor-error i {
+  font-size: 3rem;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.doctor-error h3 {
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.doctor-error button {
+  padding: 10px 25px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.doctor-error button:hover {
+  background: var(--secondary);
+}
+
+/* Doctor Header Section */
+.doctor-header-section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: var(--dark-light);
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.doctor-avatar-container {
+  flex-shrink: 0;
+}
+
+.doctor-avatar-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-header-info {
+  flex: 1;
+}
+
+.doctor-name {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.doctor-specialty {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.doctor-quick-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.info-item i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.doctor-actions {
+  margin-top: 25px;
+}
+
+.book-now-btn {
+  padding: 14px 30px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(110, 68, 255, 0.3);
+}
+
+.book-now-btn.large {
+  padding: 16px 40px;
+  font-size: 1.2rem;
+}
+
+.doctor-features {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.feature-item i {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+/* Doctor Details Section */
+.doctor-details-section {
+  margin-bottom: 50px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.details-left,
+.details-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-card {
+  background: var(--dark-light);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.info-card-title i {
+  font-size: 1.1rem;
+}
+
+.doctor-about,
+.doctor-bio {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.contact-item i {
+  color: var(--primary);
+  margin-top: 4px;
+  font-size: 1.1rem;
+}
+
+.contact-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.contact-item p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.info-list li i {
+  color: var(--secondary);
+  margin-top: 2px;
+  font-size: 0.8rem;
+}
+
+/* Appointment Section */
+.appointment-section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.appointment-cta {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(110, 68, 255, 0.1), rgba(255, 77, 124, 0.1));
+  border-radius: 15px;
+  border: 2px solid var(--primary);
+}
+
+.appointment-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.appointment-cta p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+    
+  .doctor-profile {
+    padding: 80px 0 40px;
+  }
+  
+  .doctor-header-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    gap: 25px;
+  }
+  
+  .doctor-quick-info {
+    justify-content: center;
+  }
+  
+  .doctor-name {
+    font-size: 1.8rem;
+  }
+  
+  .doctor-features {
+    justify-content: center;
+  }
+  
+  .appointment-cta {
+    padding: 30px 20px;
+  }
+  
+  .info-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .doctor-profile {
+    padding: 5px 0 1px;
+  }
+  .doctor-header-section {
+    padding: 25px;
+  }
+  
+  .doctor-avatar-img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .info-card {
+    padding: 20px;
+  }
+  
+  .book-now-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .appointment-cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  .doctor-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .doctor-specialty {
+    font-size: 1.1rem;
+  }
+}
